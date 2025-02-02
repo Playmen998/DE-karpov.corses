@@ -1,0 +1,6 @@
+[core]
+    remote = storage
+['remote "storage"']
+    url = s3://kc-dvc/dvcstore
+    region = ru-central1
+    endpointurl=https://storage.yandexcloud.net
