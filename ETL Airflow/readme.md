@@ -1,6 +1,6 @@
 ## Автоматизация ETL-процессов
 
-### Create plugin ETL
+### [Create plugin ETL](https://github.com/Playmen998/DE-karpov.corses/tree/main/ETL%20Airflow/Create%20plugin%20ETL)
 Первый файл содержит плагин, включающий класс RickMortyHook. Этот класс использует PostgresHook для создания таблицы в GreenPlum и её заполнения данными. Класс RamLocOperator подключается к API, извлекает данные и передаёт их в RickMortyHook для сохранения. Затем DAG использует этот плагин для записи данных в таблицы.
 
 #### Как работает код?  
@@ -16,7 +16,7 @@ RickMortyHook выполняет INSERT INTO, записывая локации 
 4. DAG Airflow  
 DAG запускает процесс ежедневно, вызывая RamLocOperator, который, в свою очередь, использует RickMortyHook.
 
-### Сhecking update date ETL
+### [Сhecking update date ETL](https://github.com/Playmen998/DE-karpov.corses/tree/main/ETL%20Airflow/%D0%A1hecking%20update%20date%20ETL)
 Этот DAG в Apache Airflow предназначен для выполнения заданий с понедельника по субботу, исключая воскресенье. Основная задача — подключение к базе данных GreenPlum через PostgresHook, извлечение данных из указанной таблицы и сохранение результата в XCom для последующего использования в других задачах.
 
 #### Как работает код?  
